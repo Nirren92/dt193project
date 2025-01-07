@@ -23,7 +23,7 @@ export class ArticleinshelfController {
     return this.articleinshelfService.findOne(id);
   }
 
-  @Patch(':id')
+  @Put(':id')
   update(@Param('id') id: string, @Body() updateArticleinshelfDto: UpdateArticleinshelfDto) {
     return this.articleinshelfService.update(id, updateArticleinshelfDto);
   }

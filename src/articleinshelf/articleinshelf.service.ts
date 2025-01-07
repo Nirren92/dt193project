@@ -40,7 +40,7 @@ export class ArticleinshelfService {
   async update(id: string, updateArticleinshelfDto: UpdateArticleinshelfDto) {
     try
     {
-      return await this.articleinshelfModel.findByIdAndUpdate({_id:id}, updateArticleinshelfDto).exec();
+      return await this.articleinshelfModel.findByIdAndUpdate(id, updateArticleinshelfDto).exec();
     }
     catch(err)
     {
@@ -51,7 +51,7 @@ export class ArticleinshelfService {
   remove(id: string) {
     try
     {
-      return this.articleinshelfModel.deleteOne({_id:id}).exec();
+      return this.articleinshelfModel.findByIdAndDelete(id).exec();
     }
     catch(err)
     {
